@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import './App.css'
 import confetti from 'canvas-confetti'
 import { Square } from './components/Square.jsx'
@@ -10,7 +10,6 @@ import { saveGame, resetGameStorage } from './logic/storage'
 
 
 function App() {
-  console.log('render')
 
   const [board, setBoard] = useState(() => {
     const boardFromStorage = window.localStorage.getItem('board')
@@ -67,6 +66,10 @@ function App() {
       setWinner(false) //empate
     }
   }
+
+  useEffect(() => {
+    console.log('useEffect')
+  }, [])
 
   return (
     <main className='board'>
