@@ -67,10 +67,6 @@ function App() {
     }
   }
 
-  useEffect(() => {
-    console.log('useEffect')
-  }, [])
-
   return (
     <main className='board'>
       <h1>TIC TAC TOE</h1>
